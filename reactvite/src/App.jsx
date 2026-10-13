@@ -1,26 +1,31 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
-import ICard from './components/ICard'
+import React from 'react'
+import ColorChange from './components/ColorChange'
+import MyState from './components/MyState'
+import Clg from './components/clg'
+import ImageManipulation from './components/ImageManipulation'
+import FetchProducts from './components/FetchProducts'
+import  {BrowserRouter, Routes, Route } from 'react-router-dom'
+import Login from './components/Login'
+import Registration from './components/Registration'
+import Dashboard from './components/Dashboard'
+import Home from './components/Home'
 
 function App() {
-
   return (
-    <>
-      <div style={{height: '600px', width: '600px'}}>
-        <div id='college'>
-          <h2>ABES Engineering College</h2>
-        </div>
-        <div id='details'>
-          <p>Roll: 2400320100987</p>
-          <p>Name: Sanyam Agarwal</p>
-          <p>Branch: CSE</p>
-          <p>Section: 24</p>
-          </div>
-          <ICard />
-      </div>
+   <>
+   <div>
+    {/* <Clg /> */}
+    {/* <ImageManipulation /> */}
+    {/* <FetchProducts/> */}
+    <BrowserRouter>
+    <Routes>
+    <Route path='/login' element={<Login/>}></Route>
+    <Route path='/register' element={<Registration/>}></Route>
+    <Route path='/dashboard' element={<Dashboard/>}></Route>
+    <Route path='/' element={<Home/>}></Route>
+    </Routes>
+    </BrowserRouter>
+    </div>
     </>
   )
 }
